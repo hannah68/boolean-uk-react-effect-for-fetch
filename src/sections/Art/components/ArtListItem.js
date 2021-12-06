@@ -6,7 +6,7 @@ const ArtListItem = (props) => {
     const urlId = props.art['image_id'];
 
     return (
-        <li key={props.art.id}>
+        <li>
             <div className="frame">
                 <img 
                 src={`${url}/${urlId}/full/843,/0/default.jpg`}
