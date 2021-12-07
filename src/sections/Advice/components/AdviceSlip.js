@@ -11,7 +11,7 @@ const AdviceSlip = (props) => {
         <section className="adivce-slip">
             <h3>Some Advice</h3>
             <p>{props.advice}</p>
-            <button onClick={()=> clickAdviceHandler()}>Get More Advice</button>
+            <button onClick={() => clickAdviceHandler()}>Get More Advice</button>
             <button 
             onClick={() => props.setFavourite([...props.favourite, props.advice])}>Save to Favourties</button>
         </section>
