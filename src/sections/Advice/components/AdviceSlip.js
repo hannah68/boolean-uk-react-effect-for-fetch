@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect, useState } from "react"
 
 const AdviceSlip = (props) => {
 
@@ -14,7 +13,8 @@ const AdviceSlip = (props) => {
             <h3>Some Advice</h3>
             <p>{props.advice}</p>
             <button onClick={clickAdviceHandler}>Get More Advice</button>
-            <button onClick={() => setFavourite(props.advice)}>Save to Favourties</button>
+            <button 
+            onClick={() => props.setFavourite([...props.favourite, props.advice])}>Save to Favourties</button>
         </section>
     )
 }

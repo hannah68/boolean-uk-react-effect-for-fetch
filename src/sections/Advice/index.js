@@ -18,8 +18,15 @@ function AdviceSection() {
   return (
     <section>
       <h2>Advice Section</h2>
-      <AdviceSlip advice={advice} setAdvice={setAdvice}/>
-      <FavouriteSlipsList/>
+      <AdviceSlip 
+      advice={advice} 
+      setAdvice={setAdvice}
+      setFavourite={setFavourite}
+      favourite={favourite}
+      />
+
+      <FavouriteSlipsList 
+      favourite={favourite}/>
     </section>
   )
 }

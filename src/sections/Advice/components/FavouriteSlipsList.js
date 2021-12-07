@@ -1,13 +1,13 @@
 import React from 'react'
 
-const FavouriteSlipsList = () => {
+const FavouriteSlipsList = (props) => {
     return (
         <section className="favourtite-slips-list">
             <h3>Favourite Advice Slips</h3>
             <ul>
-                <li>Measure twice, cut once.</li>
-                <li>Don't let the bastards grind you down.</li>
-                <li>Always the burrito.</li>
+                {props.favourite.map((fav, index) => {
+                    return <li key={index}>{fav}</li>
+                })}
             </ul>
         </section>
     )
