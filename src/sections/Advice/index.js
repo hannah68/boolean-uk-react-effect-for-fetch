@@ -8,10 +8,10 @@ function AdviceSection() {
 
   useEffect(() => {
     fetch("https://api.adviceslip.com/advice")
-        .then(resp => resp.json())
-        .then(result => {
-            console.log(result);
-            setAdvice(result.slip.advice);
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setAdvice(data.slip.advice);
         });
   }, []);
 
