@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 function AdviceSection() {
   const [advice, setAdvice] = useState('');
   const [favourite, setFavourite] = useState([]);
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     fetch("https://api.adviceslip.com/advice")
@@ -13,7 +14,7 @@ function AdviceSection() {
             console.log(data);
             setAdvice(data.slip.advice);
         });
-  }, []);
+  }, [trigger]);
 
   return (
     <section>
@@ -23,6 +24,8 @@ function AdviceSection() {
       setAdvice={setAdvice}
       setFavourite={setFavourite}
       favourite={favourite}
+      setTrigger={setTrigger}
+      trigger={trigger}
       />
 
       <FavouriteSlipsList 
