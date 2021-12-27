@@ -1,18 +1,18 @@
 import React from 'react'
 
-export const UsersListItem = ({user}) => {
-    const title = user.name.title
-    const name = user.name.first;
-    const family = user.name.last;
-    const gender = user.gender;
+const UsersListItem = (props) => {
+    const {user} = props;
+    const {title, first, last} = props.user.name;
     return (
-        <li className={gender === 'male' ? 'bg-blue' : 'bg-pink'}>
+        <li className={user.gender === 'female' ? 'bg-pink' : 'bg-blue'}>
             <img
-                src={user.picture.thumbnail}
-                alt={`${name} ${family}`}
-                />
-            <h3>{`${title} ${name} ${family}`}</h3>
+            src={`${user.picture.thumbnail}`}
+            alt={`${first} ${last}`}
+            />
+            <h3>{title} {first} {last}</h3>
             <p>Email: {user.email}</p>
         </li>
     )
 }
+
+export default UsersListItem

@@ -1,11 +1,12 @@
 import React from 'react'
 
 const SubjectList = (props) => {
+    const {item} = props;
     return (
         <ul>
-            {props.art.subject_titles.map((subject, index)=> {
-                return <li key={index}>{subject}</li>
-            })}
+            {item.subject_titles ? item.subject_titles.map((el, index) => {
+                return <li key={index}>{el}</li>
+            }): ''}
         </ul>
     )
 }

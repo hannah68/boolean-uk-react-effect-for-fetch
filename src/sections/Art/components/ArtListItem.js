@@ -2,20 +2,19 @@ import React from 'react'
 import SubjectList from './SubjectList'
 
 const ArtListItem = (props) => {
-    const url = "https://www.artic.edu/iiif/2"
-    const urlId = props.art['image_id'];
-
+    const {item, config} = props;
     return (
         <li>
             <div className="frame">
-                <img 
-                src={`${url}/${urlId}/full/843,/0/default.jpg`}
-                alt={props.art.title}/>
+                <img
+                    src={`${config}/${item.image_id}/full/843,/0/default.jpg`}
+                    alt={item.title}
+                />
             </div>
-            <h3>{props.art.title}</h3>
-            <p>Artist: {props.art.artist_title}</p>
+            <h3>{item.title}</h3>
+            <p>Artist: {item.artist_title}</p>
             <h4>Artistic Subjects:</h4>
-            <SubjectList art={props.art} />
+            <SubjectList item={item}/>
         </li>
     )
 }

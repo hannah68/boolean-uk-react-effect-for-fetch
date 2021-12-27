@@ -1,12 +1,12 @@
 import React from 'react'
-import { UsersListItem } from './UsersListItem'
+import UsersListItem from './UsersListItem';
 
-
-const UsersList = ({userInfo}) => {
+const UsersList = (props) => {
+    const {userData} = props;
     return (
         <ul className="users-list">
-            {userInfo.map((user, index) => {
-                return <UsersListItem user={user} key={index}/>
+            {userData.map((user,index) => {
+                return <UsersListItem key={index} user={user}/>
             })}
         </ul>
     )
